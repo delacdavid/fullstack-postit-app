@@ -27,9 +27,7 @@ export default function PostDetail(url: URL) {
   console.log(data);
   return (
     <>
-      <div>
-        <Post id={data?.id} name={data?.user.name} avatar={data?.user.image} postTitle={data?.title} comments={data?.comments} />
-      </div>
+      <div>{data && <Post id={data?.id} name={data?.user.name} avatar={data?.user.image} postTitle={data?.title} comments={data?.comments} />}</div>
       <AddComment id={data?.id} />
       {data?.comments?.map((comment) => (
         <div key={comment.id} className="p-8 my-6 bg-white rounded-md">
